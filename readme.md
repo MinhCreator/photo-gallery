@@ -113,7 +113,7 @@ You need install Python before build and deploy app
 ### Installation
 1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/MinhCreator/photo-gallery.git
    ```
 2. Install Pip packages 
    ```sh
