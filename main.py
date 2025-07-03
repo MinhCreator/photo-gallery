@@ -33,5 +33,6 @@ for errCode in [400, 401, 403, 404]:
 def serverError(error):
     return render_template("message.html", error_message="Oops,some Internal Error occured...", error_name=error.name, error_code=error.code), error.code
 
+# if run debug mode please replace app.run() by app.run(debug=True)
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
