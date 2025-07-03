@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+.homeBtn{
+    display: flex;
+    top: 10px;
+    left: 10px;
+    position: absolute;
+    
+}
+
+/* .imgs{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    /* margin-top: 25px; */
+/* } */
+
+/* .zoom{
+    display: block;
+    width: auto;
+    height: calc(100vh - 100px);
+    position: relative;
+    z-index: 999;
+    cursor: zoom-out;
+} */
+
+@keyframes apear{
+    from{
+        opacity: 0;
+        clip-path: inset(100% 100% 0 0);
+    }
+    to{
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+    }
+}
+.smooth{
+    animation: apear 0.5s linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+.font-pop {
+    font-family: "Poppins", sans-serif;
+}
+
+/* .Hoverzoom{
+    display: auto;
+    position: relative;
+    left: auto;
+    top: auto; 
+    transform:translate(-50%, -50%) scale(1.5);
+    /* animation: apear 1.5s linear; */
+    /* transition: transform .2s;
+    z-index: 1;
+} */ 
+
+/* .const {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+} */
+
+.const img{
+    /* box-shadow: 3px 3px 3px 0px #383838; */
+    transform: scale(1);
+    transition: transform .2s;
+    cursor: pointer;
+    transition: 400ms;
+}
+
+
+/* Custom Blur Zoom Hover Effect */
+.section-container {
+    --zoom-in-scale: 1.1;
+    --zoom-out-scale: 0.85;
+    --hover-bg-color: #7A3E2A;
+}
+
+.section-container {
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.section-container:hover .box-content {
+    filter: blur(6px);
+    transform: scale(var(--zoom-out-scale));
+}
+
+.box-content {
+    transform: scale(1);
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.box-content:hover {
+    transform: scale(var(--zoom-in-scale)) !important;
+    z-index: 3;
+    filter: blur(0px) !important;
+}
+
+.section-container .inner-wrapper {
+    transition: background-color 0.5s ease;
+}
+
+.section-container .box-content:hover .inner-wrapper {
+    background-color: var(--hover-bg-color) !important;
+}

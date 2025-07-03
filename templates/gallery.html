@@ -1,0 +1,174 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='favicon/gallery-32.png') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/gallery.css')}}"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- play python script in html -->
+    <link
+      rel="stylesheet"
+      href="https://pyscript.net/releases/2025.7.1/core.css"
+    />
+    <!-- This script tag bootstraps PyScript -->
+    <script
+      type="module"
+      src="https://pyscript.net/releases/2025.7.1/core.js"
+    ></script>
+    <title>Photo Gallery</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="bg-inherit shadow-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <!-- Logo -->
+          <div class="flex-shrink-0 flex items-center">
+            <a
+              href="{{url_for('home')}}"
+              class="text-xl text-blue-600 font-bold text-gray-800"
+              >Photo Gallery</a
+            >
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-6 items-center">
+            <a
+              href="{{url_for('home')}}"
+              class="text-gray-700 hover:text-blue-600 font-medium"
+              >Home</a
+            >
+
+            <a
+              href="{{url_for('gallery')}}"
+              class="text-gray-700 hover:text-blue-600 font-medium"
+              >Gallery</a
+            >
+            <a
+              href="https://www.github.com/MinhCreator"
+              class="text-gray-700 hover:text-blue-600 font-medium"
+              >Github</a
+            >
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden flex items-center">
+            <button id="menu-btn" class="text-gray-600 focus:outline-none">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-2">
+        <a
+          href="{{url_for('home')}}"
+          class="block text-gray-600 hover:text-blue-600"
+          >Home</a
+        >
+        <a
+          href="{{url_for('gallery')}}"
+          class="block text-gray-600 hover:text-blue-600"
+          >Gallery</a
+        >
+
+        <a
+          href="https://www.github.com/MinhCreator"
+          class="block text-gray-600 hover:text-blue-600"
+          >Github</a
+        >
+      </div>
+    </nav>
+
+    <script>
+      const btn = document.getElementById("menu-btn");
+      const menu = document.getElementById("mobile-menu");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
+
+    <section>
+      <div>
+        <p class="text-md text-center mt-10 font-pop font-700">
+          We are forever
+        </p>
+      </div>
+      <div>
+        <p class="text-4xl text-center mt-4 font-pop font-bold">Best Friends</p>
+      </div>
+    </section>
+
+    <div class="homeBtn">
+      <button
+        type=""
+        class="text-center bg-sky-500/50 px-4 py-2 rounded-lg hover:bg-sky-500 font-bold"
+      >
+        <a href="{{url_for('home')}}">Go Home</a>
+      </button>
+    </div>
+
+    <div class="p-5 sm:p-8">
+      <div
+        class="columns-1 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 section-container"
+      >
+        {% for images in img %}
+        <div class="gap-x-2 const">
+          <img
+            src="{{ images[1] }}"
+            alt="{{ images[0] }}"
+            loading="lazy"
+            class="object-cover rounded-lg smooth box-content"
+          />
+        </div>
+
+        {% endfor %}
+      </div>
+    </div>
+    <script>
+      // function zoom(element) {
+      //   element.classList.toggle("Hoverzoom");
+      // }
+    </script>
+
+    <!-- footer -->
+
+    <footer class="bg-white rounded-lg shadow-sm m-4">
+      <div
+        class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-center"
+      >
+        <span
+          class="text-md text-gray-500 sm:text-center text-black-700 font-pop"
+          >© 2025
+          <a href="https://github.com/MinhCreator" class="hover:underline"
+            >MinhDev</a
+          >. All Rights Reserved.
+        </span>
+      </div>
+    </footer>
+  </body>
+</html>
