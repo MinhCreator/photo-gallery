@@ -26,9 +26,17 @@
 }
 			 
 .link_404{			 
-	color: #fff!important;
+	border-radius: 10px;
+    color: #fff!important;
     padding: 10px 20px;
     background: #39ac31;
     margin: 20px 0;
-    display: inline-block;}
+    display: inline-block;
+}
+
+.link_404:hover {
+    text-decoration: none;
+    background: #2A7B9B;
+    background: linear-gradient(351deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+}
 .contant_box_404{ margin-top:-50px;}
