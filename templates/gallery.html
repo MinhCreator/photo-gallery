@@ -125,26 +125,17 @@
       </div>
     </section>
 
-    <div class="flex md:relative md:flex md:left-[calc(100vh_-_50%)] homeBtn">
-      <button
-        type=""
-        class="text-center bg-sky-500/50 px-4 py-2 rounded-lg hover:bg-sky-500 font-bold"
-      >
-        <a href="{{url_for('home')}}">Go Home</a>
-      </button>
-    </div>
-
-    <div class="p-5 sm:p-8">
+    <div class="p-5 sm:p-8 ">
       <div
-        class="columns-1 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 section-container"
+        class="columns-1 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 section-container gap-4"
       >
         {% for images in img %}
-        <div class="gap-x-2 const">
+        <div class="const img-div">
           <img
             src="{{ images[1] }}"
             alt="{{ images[0] }}"
             loading="lazy"
-            class="object-cover rounded-lg smooth box-content"
+            class="object-cover rounded-lg box-content"
           />
         </div>
 

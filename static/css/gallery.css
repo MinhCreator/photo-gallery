@@ -1,60 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
-.homeBtn{
-    display: flex;
-    top: 10px;
-    left: 10px;
-    position: absolute;
-    
-}
-
-@media screen and ( width <= 320px){
-    .homeBtn{
-        display: flex;
-        position: relative;
-        left: calc(100% - 15rem);
-    }
-}
-
-@media screen and ( width <= 40rem) {
-    .homeBtn{
-        /* top: calc(100vh - 50% ); */
-        left: calc(100vh - 50% );
-    }
-}
-
-/* .imgs{
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    /* margin-top: 25px; */
-/* } */
-
-/* .zoom{
-    display: block;
-    width: auto;
-    height: calc(100vh - 100px);
-    position: relative;
-    z-index: 999;
-    cursor: zoom-out;
-} */
-
-@keyframes apear{
-    from{
-        opacity: 0;
-        clip-path: inset(100% 100% 0 0);
-    }
-    to{
-        opacity: 1;
-        clip-path: inset(0 0 0 0);
-    }
-}
-.smooth{
-    animation: apear 0.5s linear;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;
-}
-
 .font-pop {
     font-family: "Poppins", sans-serif;
 }
@@ -62,16 +7,13 @@
     font-family: 'JetBrains Mono', monospace;
 }
 
-/* .Hoverzoom{
-    display: auto;
-    position: relative;
-    left: auto;
-    top: auto; 
-    transform:translate(-50%, -50%) scale(1.5);
-    /* animation: apear 1.5s linear; */
-    /* transition: transform .2s;
-    z-index: 1;
-} */ 
+@media screen and (320px <= width <= 768px) {
+    .img-div{
+        margin: 5px 5px 5px 5px;
+    }
+}
+
+
 
 /* .const {
     display: flex;

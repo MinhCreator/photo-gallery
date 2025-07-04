@@ -1,0 +1,3 @@
+04/07/2025:
+    * removed image display animation 
+    * removed home button in gallery.html
