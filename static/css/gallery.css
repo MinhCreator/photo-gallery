@@ -8,6 +8,21 @@
     
 }
 
+@media screen and ( width <= 320px){
+    .homeBtn{
+        display: flex;
+        position: relative;
+        left: calc(100% - 15rem);
+    }
+}
+
+@media screen and ( width <= 40rem) {
+    .homeBtn{
+        /* top: calc(100vh - 50% ); */
+        left: calc(100vh - 50% );
+    }
+}
+
 /* .imgs{
     display: flex;
     align-content: center;
@@ -42,6 +57,9 @@
 
 .font-pop {
     font-family: "Poppins", sans-serif;
+}
+.font-jet {
+    font-family: 'JetBrains Mono', monospace;
 }
 
 /* .Hoverzoom{
