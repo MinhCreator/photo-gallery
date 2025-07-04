@@ -16,7 +16,7 @@ app.add_url_rule("/", "home", view_func=home)
 # gallery
 @app.route("/gallery")
 def gallery():
-    path = get_image_path("static/image/gallery")
+    path = get_image_path("static/image_class")
     return render_template("gallery.html", img=path)
 def redirect_to_gallery():
     return redirect("gallery")
