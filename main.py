@@ -1,9 +1,10 @@
 from flask import Flask, render_template, url_for, redirect, request, jsonify, make_response
 from module.image_load import *
 from module.handler_error import genericErrorHandler
-
+import os
 
 app = Flask("Memorable Gallery")
+
 
 # home
 @app.route("/home")
@@ -17,10 +18,25 @@ app.add_url_rule("/", "home", view_func=home)
 @app.route("/gallery")
 def gallery():
     path = get_image_path("static/image_class")
-    return render_template("gallery.html", img=path)
+    other_path = get_image_path("static/image/gallery")
+    return render_template("gallery.html", img=path+other_path)
+
 def redirect_to_gallery():
     return redirect("gallery")
 app.add_url_rule("/","gallery", view_func=gallery)
+
+app.config["UPLOAD_FOLDER"] = "./static/image/gallery"
+# uploading file but this feature is used by admin only
+@app.route("/upload_file", methods=["POST", "GET"])
+def upload_file():
+
+    if request.method == "POST":
+        for imgs_file in request.files.getlist('img_file'):
+            # imgs_file = request.files['img_file']
+            imgs_file.save(os.path.join(app.config["UPLOAD_FOLDER"], imgs_file.filename))
+        return render_template("upload.html", msg="Images uploaded successfully")
+
+    return render_template("upload.html", msg="Add images master, please!")
 
 # error handlers
 # register error handlers

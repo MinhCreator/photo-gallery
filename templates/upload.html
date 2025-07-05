@@ -1,0 +1,50 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/upload.css')}}"
+    />
+    <title>upload images</title>
+    <style>
+      .submit {
+        text-align: center;
+      }
+      .container {
+        margin-top: calc(50vh - 100px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container max-w-md mx-auto">
+      <label class="text-base font-semibold text-slate-600 mb-2 block"
+        >Upload image files</label
+      >
+      <p>{{msg}}</p>
+      <form
+        action="{{url_for('upload_file')}}"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <input
+          type="file"
+          name="img_file"
+          multiple
+          id="image_file"
+          accept="image/*"
+          class="w-full text-slate-400 font-semibold text-sm bg-white border file:cursor-pointer cursor-pointer file:border-0 file:py-2.5 file:px-4 file:mr-4 file:bg-gray-100 file:hover:bg-gray-200 file:text-slate-600 rounded"
+        />
+        <br />
+       
+        <input
+          type="submit"
+          value="Upload"
+          id="submit"
+          class="text-white font-medium submit w-24 mt-2 mb-5 flex relative mt-8 cursor-pointer bg-gray-500 hover:bg-gray-800 hover:shadow-2xl w-24 h-10 rounded-lg"
+        />
+       
+      </form>
+    </div>
+  </body>
+</html>

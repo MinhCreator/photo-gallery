@@ -2,4 +2,8 @@
     * removed image display animation 
     * removed home button in gallery.html
     * added several image of my old class after I have has graduation
-   
+
+05/07/2025:
+    * added upload file feature 
+    * added ui for upload file.html
+    * added tailwind npm package
