@@ -1,4 +1,7 @@
 #file type checker after uploaded file
+import os.path
+
+
 def filetype_checker(file_path: str)-> str:
     """
     Checks if the file type of the given file path is valid.
@@ -21,8 +24,25 @@ def filetype_checker(file_path: str)-> str:
     
     return "invalid"
 
+def check_exist(path: str)-> bool:
+    """
+    Checks if a file or directory exists at the given path.
 
+    Args:
+        path (str): The path to the file or directory to check.
 
+    Returns:
+        bool: True if the file or directory exists, False otherwise.
+    """
+    file = path
 
+    if os.path.exists(file):
+        return True
+    else:
+        return False
+
+# file = "./module/handler_error.py"
+# print(check_exists(file))
+print(check_exist("1.png"))
 
 
