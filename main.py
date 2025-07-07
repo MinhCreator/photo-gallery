@@ -6,7 +6,7 @@ from module.secret_gen import final_gen
 import os
 
 app = Flask("Memorable Gallery")
-UPLOAD_FOLDER = 'static/upload_image'
+UPLOAD_FOLDER = './static/upload_image'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = final_gen()
 
@@ -32,13 +32,6 @@ app.add_url_rule("/","gallery", view_func=gallery)
 # uploading file but this feature is used by admin only
 @app.route("/upload_file", methods=["POST", "GET"])
 def upload_file():
-    return render_template('upload.html')
-def redirect_to_upload_file():
-    return redirect("upload_file")
-app.add_url_rule("/","upload_file", view_func=upload_file)
-
-@app.route("/upload_file", methods=["POST", "GET"])
-def upload_file():
     default_path ='./static/upload_image/'
     if request.method == "POST":
         for imgs_file in request.files.getlist('img_file'):
@@ -55,7 +48,9 @@ def upload_file():
         return redirect(url_for('upload_file'))
 
     return render_template('upload.html', files=os.listdir(UPLOAD_FOLDER))
-
+def redirect_to_upload_file():
+    return redirect("upload_file")
+app.add_url_rule("/upload_file","upload_file", view_func=upload_file)
 
 @app.route('/download/<filename>')
 def download_file(filename):
