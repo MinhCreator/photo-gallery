@@ -49,6 +49,8 @@ def upload_file():
         return redirect(url_for('upload_file'))
 
     return render_template('upload.html', files=os.listdir(UPLOAD_FOLDER))
+app.add_url_rule("/","upload_file", view_func=upload_file)
+
 
 @app.route('/download/<filename>')
 def download_file(filename):
@@ -62,7 +64,6 @@ def delete_file(filename):
         flash("File deleted successfully", "success")
     return redirect(url_for('upload_file'))
 
-app.add_url_rule("/upload_file","upload_file", view_func=upload_file)
 
 # error handlers
 # register error handlers
