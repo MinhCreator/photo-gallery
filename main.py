@@ -6,8 +6,7 @@ from module.secret_gen import final_gen
 import os
 
 app = Flask("Memorable Gallery")
-UPLOAD_FOLDER = './static/upload_image'
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+UPLOAD_FOLDER = 'static/upload_image'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = final_gen()
 
