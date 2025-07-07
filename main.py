@@ -62,6 +62,8 @@ def delete_file(filename):
         flash("File deleted successfully", "success")
     return redirect(url_for('upload_file'))
 
+app.add_url_rule("/upload_file","upload_file", view_func=upload_file)
+
 # error handlers
 # register error handlers
 for errCode in [400, 401, 403, 404]:
