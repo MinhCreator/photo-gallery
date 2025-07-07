@@ -30,27 +30,27 @@ app.add_url_rule("/","gallery", view_func=gallery)
 
 
 # uploading file but this feature is used by admin only
-@app.route("/upload_file", methods=["POST", "GET"])
-def upload_file():
+@app.route("/upload", methods=["POST", "GET"])
+def upload():
     default_path ='./static/upload_image/'
     if request.method == "POST":
         for imgs_file in request.files.getlist('img_file'):
             if imgs_file.filename == "":
                 flash("No selected file", "warning")
-                return redirect(url_for('upload_file'))
+                return redirect(url_for('upload'))
             if check_exist(default_path + imgs_file.filename):
                 flash("File is exists on server", "warning")
-                return redirect(url_for('upload_file'))
+                return redirect(url_for('upload'))
             else:
                 imgs_file.save(os.path.join(app.config["UPLOAD_FOLDER"], imgs_file.filename))
                 flash("Images uploaded successfully", "success")
             # print(imgs_file.filename)
-        return redirect(url_for('upload_file'))
+        return redirect(url_for('upload'))
 
     return render_template('upload.html', files=os.listdir(UPLOAD_FOLDER))
 def redirect_to_upload_file():
-    return redirect("upload_file")
-app.add_url_rule("/upload_file","upload_file", view_func=upload_file)
+    return redirect("upload")
+app.add_url_rule("/upload","upload", view_func=upload)
 
 @app.route('/download/<filename>')
 def download_file(filename):
@@ -62,7 +62,7 @@ def delete_file(filename):
     if os.path.exists(file_path):
         os.remove(file_path)
         flash("File deleted successfully", "success")
-    return redirect(url_for('upload_file'))
+    return redirect(url_for('upload'))
 
 
 # error handlers
