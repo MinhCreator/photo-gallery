@@ -2,13 +2,15 @@ from flask import Flask, render_template, url_for, redirect, request, jsonify, m
 from module.image_load import *
 from module.handler_error import genericErrorHandler
 from module.file_checker import *
+from module.secret_gen import final_gen
 import os
 
 app = Flask("Memorable Gallery")
 UPLOAD_FOLDER = './static/upload_image'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.secret_key = 'super secret key'
+app.secret_key = final_gen()
+
 # home
 @app.route("/home")
 def home():
@@ -44,7 +46,7 @@ def upload_file():
             else:
                 imgs_file.save(os.path.join(app.config["UPLOAD_FOLDER"], imgs_file.filename))
                 flash("Images uploaded successfully", "success")
-            print(imgs_file.filename)
+            # print(imgs_file.filename)
         return redirect(url_for('upload_file'))
 
     return render_template('upload.html', files=os.listdir(UPLOAD_FOLDER))
@@ -58,6 +60,7 @@ def delete_file(filename):
     file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
     if os.path.exists(file_path):
         os.remove(file_path)
+        flash("File deleted successfully", "success")
     return redirect(url_for('upload_file'))
 
 # error handlers

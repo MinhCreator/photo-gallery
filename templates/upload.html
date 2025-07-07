@@ -90,14 +90,43 @@
         stroke: rgb(0, 0, 0);
         stroke-width: 2;
       }
+      @-webkit-keyframes slide-bottom {
+        0% {
+          -webkit-transform: translateY(0);
+          transform: translateY(0);
+        }
+        100% {
+          -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+        }
+      }
+      @keyframes slide-bottom {
+        0% {
+          -webkit-transform: translateY(0);
+          transform: translateY(0);
+        }
+        100% {
+          -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+        }
+      }
+
+      .slide-bottom {
+        -webkit-animation: slide-bottom 0.5s
+          cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      }
     </style>
   </head>
 
   <body>
     <!-- alert -->
-    {% with message = get_flashed_messages(with_categories=true) %} {% if message %} {% for category, msg in
-    message %}
-    <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+    {% with message = get_flashed_messages(with_categories=true) %} {% if
+    message %} {% for category, msg in message %}
+    <div
+      class="alert alert-{{category}} alert-dismissible fade show slide-bottom"
+      role="alert"
+    >
       {{msg}}
       <button
         type="button"
@@ -107,7 +136,6 @@
       ></button>
     </div>
     {% endfor %} {% endif %} {% endwith %}
-    
 
     <div
       class="sm:w-[32rem] mx-auto my-40 overflow-hidden rounded-2xl bg-white shadow-xl sm:max-w-lg"
@@ -129,7 +157,7 @@
           multiple
           id="image_file"
           accept="image/*"
-          class="flex w-1/2 text-white font-bold text-sm bg-slate-400 border file:cursor-pointer cursor-pointer file:py-2.5 file:px-4 file:mr-4 file:bg-gray-200 file:hover:bg-gray-600 file:text-slate-600 rounded-lg"
+          class="w-1/2 text-slate-500 font-medium text-sm bg-gray-100 file:cursor-pointer cursor-pointer file:border-0 file:py-2 file:px-4 file:mr-4 file:bg-gray-800 file:hover:bg-gray-700 file:text-white rounded"
           required
         />
         <br />

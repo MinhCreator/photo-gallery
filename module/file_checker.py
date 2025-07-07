@@ -43,6 +43,6 @@ def check_exist(path: str)-> bool:
 
 # file = "./module/handler_error.py"
 # print(check_exists(file))
-print(check_exist("1.png"))
+
 
 
