@@ -26,4 +26,4 @@ def serverError(error):
 
 # if run debug mode please replace app.run() by app.run(debug=True)
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
