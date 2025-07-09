@@ -7,3 +7,8 @@
     * added upload file feature 
     * added ui for upload file.html
     * added tailwind npm package
+
+09/07/2025:
+    * restructure code and routes 
+    * add correction build and deploy vercel CLI
+    * so I don't no to write more things in changelog.txt 
