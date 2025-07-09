@@ -17,11 +17,5 @@
       "src": "/(.*)",
       "dest": "main.py"
     }
-  ],
-  "redirects": [
-    {
-      "source": "/upload",
-      "destination": "/templates/upload.html"
-    }
   ]
 }
