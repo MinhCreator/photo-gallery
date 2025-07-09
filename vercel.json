@@ -1,5 +1,5 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
+//   "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2.0,
   "name": "Memorable Gallery",
   "description": "The simple photo gallery website!",
