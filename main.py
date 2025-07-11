@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 from module.handler_error import genericErrorHandler
 from module.secret_gen import final_gen
 from routes.config_route import configure_route
@@ -8,9 +8,11 @@ UPLOAD_FOLDER = './static/upload_image'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = final_gen()
 
-@app.route("/")
+@app.route("/home")
 def home():
     return render_template("home.html", title="Memorable Gallery")
+redirect("home")
+app.add_url_rule("/","home", view_func=home)
 
 configure_route(app)
 # error handlers
