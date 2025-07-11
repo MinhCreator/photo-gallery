@@ -12,3 +12,7 @@
     * restructure code and routes 
     * add correction build and deploy vercel CLI
     * so I don't no to write more things in changelog.txt 
+
+11/07/2025:
+    * application no longer deployment by vercel
+    * deploy app by heroku

@@ -10,4 +10,4 @@ def delete_file(app):
         if os.path.exists(file_path):
             os.remove(file_path)
             flash("File deleted successfully", "success")
-        return redirect(url_for('upload'))
+        return redirect(url_for('upload_form'))
