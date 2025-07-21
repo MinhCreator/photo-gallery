@@ -1,6 +1,7 @@
 from module.image_load import get_image_path
 from flask import render_template, redirect
 
+
 def add_gallery(app):
 # gallery
     @app.route("/gallery")

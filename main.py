@@ -2,10 +2,12 @@ from flask import Flask, render_template, redirect
 from module.handler_error import genericErrorHandler
 from module.secret_gen import final_gen
 from routes.config_route import configure_route
+import os
+basedir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask("Memorable Gallery")
-UPLOAD_FOLDER = './static/upload_image'
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+upload_folder = 'static/upload_image'
+app.config['UPLOAD_FOLDER'] = os.path.join(basedir, upload_folder)
 app.secret_key = final_gen()
 
 @app.route("/home")

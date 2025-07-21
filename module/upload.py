@@ -2,16 +2,16 @@ from flask import render_template, request, redirect, url_for, flash
 import os
 from module.file_checker import check_exist
 
+
 def upload(app):
 # upload only use by admin
-    UPLOAD_FOLDER = './static/upload_image'
     @app.route('/upload_form')
     def upload_form():
-        return render_template('upload.html', files=os.listdir(UPLOAD_FOLDER))
+        return render_template('upload.html', files=os.listdir(app.config["UPLOAD_FOLDER"]))
         
-    @app.route("/upload", methods=["POST"])
+    @app.route("/upload", methods=["POST", "GET"])
     def upload():
-        default_path ='./static/upload_image/'
+        default_path = app.config["UPLOAD_FOLDER"] #'./static/upload_image/'
         if request.method == "POST":
             get_list_img = request.files.getlist('img_file')
             for imgs_file in get_list_img:
