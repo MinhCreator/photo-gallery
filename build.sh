@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# install python3
-sudo apt install python3
-
 # Define the project directory
 PROJECT_DIR=$(pwd)
 echo "Project directory: $PROJECT_DIR"
