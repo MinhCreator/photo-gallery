@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Creating upload folder if it doesn't exist
 UPLOAD_DIR=${PROJECT_DIR}/static/upload_image
 
