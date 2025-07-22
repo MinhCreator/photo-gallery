@@ -1,9 +1,13 @@
 #!/bin/bash
 
-# set run build.sh
+# Define the project directory
+PROJECT_DIR=$(pwd)
+echo "Project directory: $PROJECT_DIR"
 
-chmod +x ./build.sh
+# Creating upload folder if it doesn't exist
+UPLOAD_DIR=${PROJECT_DIR}/static/upload_image
 
-# run build.sh
-
-./build.sh
+if [ ! -d "$UPLOAD_DIR" ]; then
+  mkdir $UPLOAD_DIR
+  echo "upload folder created"
+fi
