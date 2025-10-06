@@ -58,6 +58,7 @@
               class="text-gray-700 hover:text-blue-600 font-medium"
               >Gallery</a
             >
+
             <a
               href="https://www.github.com/MinhCreator"
               class="text-gray-700 hover:text-blue-600 font-medium"
@@ -118,7 +119,7 @@
     </script>
 
     <!-- middle page -->
-
+    {% block content %}
     <section
       class="py-8 sm:py-16 md:py-24 flex items-center justify-center h-fit bg-linear-to-r from-sky-500 to-pink-500 bg-fit"
     >
@@ -421,5 +422,6 @@
         </ul>
       </div>
     </footer>
+    {% endblock %}
   </body>
 </html>
