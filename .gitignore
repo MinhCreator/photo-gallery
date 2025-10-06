@@ -1,4 +1,5 @@
 .venv
 /data.json
 __pycache__
+/module/__pycache__
 /node_modules
