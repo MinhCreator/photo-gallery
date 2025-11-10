@@ -92,6 +92,7 @@
 ### Built Tool & Deploy
 
 * [![vercel][vercel]][vercel-url]
+* [![render][render]][render-url]
 * [![Flask][flask]][flask-url]
 * [![TailwindCss][tailwindcss.com]][tailwind-url]
 * [![Python][python.org]][Python-url]
@@ -212,6 +213,8 @@ Use this space to list resources you find helpful and would like to give credit 
 [product-screenshot]: images/screenshot.png
 [vercel]: https://img.shields.io/badge/vercel-000000?style=for-the-badge&logo=vercel&logoColor=white
 [vercel-url]: https://vercel.com
+[render]: https://img.shields.io/badge/render-000000?style=for-the-badge&logo=vercel&logoColor=white
+[render-url]: https://render.com
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
 [flask]: https://img.shields.io/badge/flask-35495E?style=for-the-badge&logo=flask&logoColor=white
