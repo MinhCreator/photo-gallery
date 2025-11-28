@@ -41,7 +41,7 @@
     <a href="https://github.com/MinhCreator/photo-gallery"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://photo-gallery-beta-test.vercel.app">View Demo</a>
+    <a href="https://photo-gallery-ro6r.onrender.com/">View Demo</a>
     &middot;
     <a href="https://github.com/MinhCreator/photo-gallery/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     &middot;
@@ -91,7 +91,7 @@
 
 ### Built Tool & Deploy
 
-* [![vercel][vercel]][vercel-url]
+<!-- * [![vercel][vercel]][vercel-url] -->
 * [![render][render]][render-url]
 * [![Flask][flask]][flask-url]
 * [![TailwindCss][tailwindcss.com]][tailwind-url]
