@@ -14,4 +14,4 @@ fi
 
 # Run the main application
 echo "deploying application..."
-python3 main.py
+python3 app.py
